@@ -2,7 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
 @import "tailwindcss";
 
-@theme{
-    --font-bodoni-moda:'Bodoni Moda',sans serif;
-    --font-tenor-sans:'Tenor Sans',sans serif;
+@theme {
+    --font-bodoni-moda: 'Bodoni Moda', sans serif;
+    --font-tenor-sans: 'Tenor Sans', sans serif;
+
+    --color-*: initial;
+    --color-primary: #A8715A;
+    --color-secondery: #DD8560;
+    --color-text-body: #333333;
+    --color-label:#555555;
+    --color-placeholder: #888888;
+    --color-line: #E0CFBA;
+    --color-input-bg: #F9F9F9;
+    --color-bg: #F8F0E7;
+    --color-white:#ffffff;
+    --color-yellow: #FCFCFC;
 }
