@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar"
+import Navbar from "./Navbar"
 
-import mobileHero from "../assets/images/home/header-mobile.jpg"
-import desktopHero from "../assets/images/home/hero-desktop.jpg"
+import mobileHero from "../../assets/images/home/header-mobile.jpg"
+import desktopHero from "../../assets/images/home/hero-desktop.jpg"
 export default function Header() {
   return (
      <header className="relative min-h-dvh overflow-hidden">

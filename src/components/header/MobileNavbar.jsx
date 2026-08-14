@@ -1,5 +1,8 @@
 import { useState } from "react"
-import { navbarIcons, categories } from "../data/navbar"
+import { navbarIcons, categories } from "../../data/navbar"
+
+import Divider from "../common/Divider"
+import Search from "./Search"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -8,6 +11,8 @@ export default function Navbar() {
     const [activeCategory, setActiveCategory] = useState("women")
     const [openItem, setOpenItem] = useState(null)
 
+    /* search */
+    const [isSearchOpen, setIsSearchOpen] = useState(false)
     const activeCategoryData = categories.find(
         category => category.id === activeCategory
     )
@@ -37,40 +42,40 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="fixed top-0 right-0 left-0 z-30 p-5 font-tenor-sans bg-bg  shadow-2xs">
+        <div className="flex items-center justify-between">
+            <button onClick={openMenu}>
+                <img
+                    src={navbarIcons.menu}
+                    alt="menu icon"
+                />
+            </button>
 
-            <div className="flex items-center justify-between">
-                <button onClick={openMenu}>
+            <a href="">
+                <img
+                    src={navbarIcons.logo}
+                    alt="logo icon"
+                />
+            </a>
+
+            <div className="flex items-center justify-center gap-2.5">
+                <button onClick={()=>setIsSearchOpen(true)}>
                     <img
-                        src={navbarIcons.menu}
-                        alt="menu icon"
+                        src={navbarIcons.search}
+                        alt="search icon"
                     />
                 </button>
 
-                <a href="">
+                <button>
                     <img
-                        src={navbarIcons.logo}
-                        alt="logo icon"
+                        src={navbarIcons.shoppingBag}
+                        alt="shopping icon"
                     />
-                </a>
-
-                <div className="flex items-center justify-center gap-2.5">
-                    <button>
-                        <img
-                            src={navbarIcons.search}
-                            alt="search icon"
-                        />
-                    </button>
-
-                    <button>
-                        <img
-                            src={navbarIcons.shoppingBag}
-                            alt="shopping icon"
-                        />
-                    </button>
-                </div>
+                </button>
+                <Search
+    isOpen={isSearchOpen}
+    onClose={() => setIsSearchOpen(false)}
+/>
             </div>
-
             {/* Mobile menu */}
             {isOpen && (
                 <div
@@ -208,7 +213,7 @@ export default function Navbar() {
                     {/* Blog */}
                     <div className="px-5">
 
-                        <a  href=""
+                        <a href=""
                             className="
                                 flex items-center justify-between
                                 py-4
@@ -245,12 +250,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Divider */}
-                    <div className="mt-8 flex justify-center">
-                        <div className="relative w-32 border-t border-placeholder">
-                            <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-placeholder bg-white" />
-                        </div>
-                    </div>
+                   <Divider/>
 
                     {/* Social media */}
                     <div className="flex items-center justify-center gap-9 py-10">
@@ -269,6 +269,6 @@ export default function Navbar() {
                     </div>
                 </div>
             )}
-        </nav>
+        </div>
     )
 }
