@@ -37,8 +37,8 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="max-w-7xl mx-auto py-10 sticky top-0 px-3 font-tenor-sans">
-            {/* Mobile navbar */}
+        <nav className="fixed top-0 right-0 left-0 z-30 p-5 font-tenor-sans bg-bg  shadow-2xs">
+
             <div className="flex items-center justify-between">
                 <button onClick={openMenu}>
                     <img
@@ -76,19 +76,18 @@ export default function Navbar() {
                 <div
                     className={`
                         fixed inset-0 z-40
-                        bg-white text-text-body
+                        bg-bg text-text-body
                         overflow-y-auto
                         transition-transform duration-300 ease-in-out
-                        ${
-                            isEntering && !isClosing
-                                ? "translate-x-0"
-                                : "-translate-x-full"
+                        ${isEntering && !isClosing
+                            ? "translate-x-0"
+                            : "-translate-x-full"
                         }
                     `}>
 
                     {/* Close button */}
                     <button
-                        className="px-3 py-7 mt-5"
+                        className="p-5 "
                         onClick={closeMenu}
                     >
                         <img
@@ -108,10 +107,9 @@ export default function Navbar() {
                                     setOpenItem(null)
                                 }}
                                 className={`relative pb-4 transition-colors duration-200
-                                    ${
-                                        activeCategory === category.id
-                                            ? "text-text-body"
-                                            : "text-text-body/70"
+                                    ${activeCategory === category.id
+                                        ? "text-text-body"
+                                        : "text-text-body/70"
                                     } `}>
 
                                 <span>
@@ -173,10 +171,9 @@ export default function Navbar() {
                                             transition-all
                                             duration-300
                                             ease-in-out
-                                            ${
-                                                openItem === item.id
-                                                    ? "max-h-[500px] opacity-100"
-                                                    : "max-h-0 opacity-0"
+                                            ${openItem === item.id
+                                                ? "max-h-125 opacity-100"
+                                                : "max-h-0 opacity-0"
                                             }`} >
 
                                         {item.children.map((child, index) => (
@@ -188,10 +185,9 @@ export default function Navbar() {
                                                     transition-all
                                                     duration-300
                                                     ease-out
-                                                    ${
-                                                        openItem === item.id
-                                                            ? "translate-x-0 opacity-100"
-                                                            : "-translate-x-3 opacity-0"
+                                                    ${openItem === item.id
+                                                        ? "translate-x-0 opacity-100"
+                                                        : "-translate-x-3 opacity-0"
                                                     }
                                                 `}
                                                 style={{
@@ -209,7 +205,21 @@ export default function Navbar() {
                             </div>
                         ))}
                     </div>
+                    {/* Blog */}
+                    <div className="px-5">
 
+                        <a  href=""
+                            className="
+                                flex items-center justify-between
+                                py-4
+                                text-text-body/80
+                                transition-colors duration-200
+                                hover:text-text-body
+                            ">
+                            <span>Blog</span>
+                            <img src={navbarIcons.forward} />
+                        </a>
+                    </div>
                     {/* Contact */}
                     <div className="mt-5 flex flex-col gap-5 px-5 text-text-body/70">
 
@@ -237,7 +247,6 @@ export default function Navbar() {
 
                     {/* Divider */}
                     <div className="mt-8 flex justify-center">
-
                         <div className="relative w-32 border-t border-placeholder">
                             <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-placeholder bg-white" />
                         </div>

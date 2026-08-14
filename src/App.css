@@ -6,7 +6,6 @@
     --font-bodoni-moda: 'Bodoni Moda', sans serif;
     --font-tenor-sans: 'Tenor Sans', sans serif;
 
-    --color-*: initial;
     --color-primary: #A8715A;
     --color-secondery: #DD8560;
     --color-text-body: #333333;
@@ -16,5 +15,5 @@
     --color-input-bg: #F9F9F9;
     --color-bg: #F8F0E7;
     --color-white:#ffffff;
-    --color-yellow: #FCFCFC;
+
 }

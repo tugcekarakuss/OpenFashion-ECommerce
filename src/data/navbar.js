@@ -7,6 +7,7 @@ import Location from "../assets/icons/Location.svg";
 import Logo from "../assets/icons/Logo.svg";
 import Down from "../assets/icons/Down.svg";
 import Up from "../assets/icons/Up.svg";
+import Forward from "../assets/icons/Forward.svg"
 import Instagram from "../assets/icons/Instagram.svg";
 import Twitter from "../assets/icons/Twitter.svg";
 import YouTube from "../assets/icons/YouTube.svg";
@@ -21,6 +22,7 @@ export const navbarIcons = {
   logo: Logo,
   down: Down,
   up: Up,
+  forward:Forward,
   twitter: Twitter,
   instagram: Instagram,
   youTube: YouTube
