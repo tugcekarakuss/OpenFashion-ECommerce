@@ -16,7 +16,7 @@ export default function Search({ isOpen, onClose }) {
     if (!isOpen) return null
 
     return (
-        <div className=" fixed inset-0 z-50 bg-bg px-5 animate-[slideDown_300ms_ease-out]">
+        <div className="fixed inset-0 z-50 bg-menu px-5 animate-[slideDown_300ms_ease-out]">
 
             {/* Search header */}
             <div className="flex items-center justify-between gap-4 border-b border-label p-5">

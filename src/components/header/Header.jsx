@@ -1,10 +1,10 @@
 import Navbar from "./Navbar"
 
-import mobileHero from "../../assets/images/home/header-mobile.jpg"
-import desktopHero from "../../assets/images/home/hero-desktop.jpg"
+import mobileHero from "../../assets/images/home/header-mobile-1.jpg"
+import desktopHero from "../../assets/images/home/header-dektop-1.jpg"
 export default function Header() {
-  return (
-     <header className="relative min-h-dvh overflow-hidden">
+    return (
+        <header className="relative min-h-dvh overflow-hidden">
             {/* Hero image */}
             <picture className="absolute inset-0 z-0">
                 <source
@@ -14,12 +14,12 @@ export default function Header() {
 
                 <img
                     src={mobileHero}
-                    alt=""
-                    className="h-full w-full object-cover"
+                    alt="mobile hero picture"
+                    className="h-full w-full object-cover object-top"
                 />
             </picture>
 
-            <div className="absolute inset-0 z-10 bg-black/10" />
+            <div className="absolute inset-0 z-10 bg-black/20" />
 
             <Navbar />
 
@@ -27,7 +27,7 @@ export default function Header() {
             <div className="relative z-20 flex min-h-dvh flex-col items-start justify-center px-5">
 
                 {/* Title */}
-                <div className="flex flex-col items-start font-bodoni-moda italic uppercase text-4xl leading-9 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.45)]">
+                <div className="flex flex-col items-start font-play-fair italic uppercase text-4xl leading-10 lg:text-6xl  lg:leading-15 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.45)]">
                     <h1 className="relative left-5">Luxury</h1>
                     <h1 className="relative left-10">Fashion</h1>
                     <h1 className="relative left-9 whitespace-nowrap">& Accessories</h1>
@@ -41,5 +41,5 @@ export default function Header() {
                 </a>
             </div>
         </header>
-  )
+    )
 }

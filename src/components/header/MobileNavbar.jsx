@@ -42,7 +42,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between lg:hidden">
             <button onClick={openMenu}>
                 <img
                     src={navbarIcons.menu}
@@ -58,7 +58,7 @@ export default function Navbar() {
             </a>
 
             <div className="flex items-center justify-center gap-2.5">
-                <button onClick={()=>setIsSearchOpen(true)}>
+                <button onClick={() => setIsSearchOpen(true)}>
                     <img
                         src={navbarIcons.search}
                         alt="search icon"
@@ -72,16 +72,16 @@ export default function Navbar() {
                     />
                 </button>
                 <Search
-    isOpen={isSearchOpen}
-    onClose={() => setIsSearchOpen(false)}
-/>
+                    isOpen={isSearchOpen}
+                    onClose={() => setIsSearchOpen(false)}
+                />
             </div>
             {/* Mobile menu */}
             {isOpen && (
                 <div
                     className={`
                         fixed inset-0 z-40
-                        bg-bg text-text-body
+                        bg-menu text-text-body
                         overflow-y-auto
                         transition-transform duration-300 ease-in-out
                         ${isEntering && !isClosing
@@ -214,13 +214,7 @@ export default function Navbar() {
                     <div className="px-5">
 
                         <a href=""
-                            className="
-                                flex items-center justify-between
-                                py-4
-                                text-text-body/80
-                                transition-colors duration-200
-                                hover:text-text-body
-                            ">
+                            className="flex items-center justify-between py-4 text-text-body/80 transition-colors duration-200 hover:text-text-body">
                             <span>Blog</span>
                             <img src={navbarIcons.forward} />
                         </a>
@@ -250,7 +244,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                   <Divider/>
+                    <Divider />
 
                     {/* Social media */}
                     <div className="flex items-center justify-center gap-9 py-10">
