@@ -21,11 +21,16 @@ export default function DesktopNavbar() {
 
                 {/* Navigation */}
                 <div className="flex items-center gap-10 xl:gap-12">
-
+                    <a
+                        href="/about-us"
+                        className="py-8 uppercase text-sm text-text-body transition-colors duration-200 hover:text-text-body/60"
+                    >
+                        About Us
+                    </a>
                     {categories.map(category => {
                         const hasDropdown = category.items?.some(
                             item => item.children
-                    )
+                        )
 
                         return (
                             <div
@@ -102,11 +107,19 @@ export default function DesktopNavbar() {
                     })}
 
                     {/* Blog */}
+
                     <a
                         href="/blog"
-                        className="py-8 text-sm text-text-body transition-colors duration-200 hover:text-text-body/60"
+                        className="py-8 text-sm uppercase text-text-body transition-colors duration-200 hover:text-text-body/60"
                     >
                         Blog
+                    </a>
+
+                    <a
+                        href="/contact"
+                        className="py-8 text-sm uppercase text-text-body transition-colors duration-200 hover:text-text-body/60"
+                    >
+                        Contact
                     </a>
 
                 </div>

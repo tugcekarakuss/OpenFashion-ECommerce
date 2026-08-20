@@ -211,12 +211,20 @@ export default function Navbar() {
                         ))}
                     </div>
                     {/* Blog */}
-                    <div className="px-5">
+                    <div className="mx-5 mt-4 rounded-2xl border border-placeholder/20 bg-white/20 px-4 py-2">
+                        <a href="/about" className="flex items-center justify-between border-b border-placeholder/20 py-4 text-text-body/80 transition-colors duration-200 hover:text-text-body">
+                            <span>About Us</span>
+                            <img src={navbarIcons.forward} alt="" />
+                        </a>
 
-                        <a href=""
-                            className="flex items-center justify-between py-4 text-text-body/80 transition-colors duration-200 hover:text-text-body">
+                        <a href="/blog" className="flex items-center justify-between border-b border-placeholder/20 py-4 text-text-body/80 transition-colors duration-200 hover:text-text-body">
                             <span>Blog</span>
-                            <img src={navbarIcons.forward} />
+                            <img src={navbarIcons.forward} alt="" />
+                        </a>
+
+                        <a href="/contact" className="flex items-center justify-between py-4 text-text-body/80 transition-colors duration-200 hover:text-text-body">
+                            <span>Contact</span>
+                            <img src={navbarIcons.forward} alt="" />
                         </a>
                     </div>
                     {/* Contact */}
